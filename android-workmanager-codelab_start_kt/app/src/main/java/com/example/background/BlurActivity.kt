@@ -52,6 +52,7 @@ class BlurActivity : AppCompatActivity() {
             Glide.with(this).load(imageUri).into(imageView)
         }
 
+        
     }
 
     private fun bindResources() {
@@ -61,6 +62,8 @@ class BlurActivity : AppCompatActivity() {
         outputButton = findViewById(R.id.see_file_button)
         cancelButton = findViewById(R.id.cancel_button)
         radioGroup = findViewById(R.id.radio_blur_group)
+        
+        goButton.setOnClickListener { viewModel.applyBlur(blurLevel) }
     }
 
     /**
@@ -90,4 +93,6 @@ class BlurActivity : AppCompatActivity() {
                 R.id.radio_blur_lv_3 -> 3
                 else -> 1
             }
+    
+    
 }
